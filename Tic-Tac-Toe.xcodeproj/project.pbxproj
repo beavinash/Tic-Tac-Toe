@@ -12,6 +12,7 @@
 		0D9E055D20D8249300A1D15B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E055C20D8249300A1D15B /* Assets.xcassets */; };
 		0D9E056020D8249300A1D15B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E055E20D8249300A1D15B /* LaunchScreen.storyboard */; };
 		0D9E056820D82A7B00A1D15B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E056720D82A7B00A1D15B /* GameViewController.swift */; };
+		0DD8378820D9BDB90001E2B2 /* GameRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD8378720D9BDB90001E2B2 /* GameRulesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0D9E055F20D8249300A1D15B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D9E056120D8249300A1D15B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D9E056720D82A7B00A1D15B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		0DD8378720D9BDB90001E2B2 /* GameRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,30 @@
 			isa = PBXGroup;
 			children = (
 				0D9E055520D8249100A1D15B /* AppDelegate.swift */,
-				0D9E055920D8249100A1D15B /* Main.storyboard */,
-				0D9E056720D82A7B00A1D15B /* GameViewController.swift */,
+				0DD8378920D9CB9A0001E2B2 /* View */,
+				0DD8378620D9BD8B0001E2B2 /* Controllers */,
 				0D9E055C20D8249300A1D15B /* Assets.xcassets */,
-				0D9E055E20D8249300A1D15B /* LaunchScreen.storyboard */,
 				0D9E056120D8249300A1D15B /* Info.plist */,
 			);
 			path = "Tic-Tac-Toe";
+			sourceTree = "<group>";
+		};
+		0DD8378620D9BD8B0001E2B2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D9E056720D82A7B00A1D15B /* GameViewController.swift */,
+				0DD8378720D9BDB90001E2B2 /* GameRulesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0DD8378920D9CB9A0001E2B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D9E055920D8249100A1D15B /* Main.storyboard */,
+				0D9E055E20D8249300A1D15B /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD8378820D9BDB90001E2B2 /* GameRulesViewController.swift in Sources */,
 				0D9E056820D82A7B00A1D15B /* GameViewController.swift in Sources */,
 				0D9E055620D8249100A1D15B /* AppDelegate.swift in Sources */,
 			);
