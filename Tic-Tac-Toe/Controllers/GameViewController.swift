@@ -18,11 +18,11 @@ class GameViewController: UIViewController {
     var playerTurn: Int = 1
     
     // This variable shows the winning combinations Tic Tac Toe game can have
-    let winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
-                               [0, 3, 6], [1, 4, 7], [2, 5, 8],
-                               [0, 4, 8], [2, 4, 6]]
+    let winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontal winning combinations
+                               [0, 3, 6], [1, 4, 7], [2, 5, 8], // Vertical winning combinations
+                               [0, 4, 8], [2, 4, 6]] // Diagnol winning combinations
     
-    
+    // Variables that keep track of player scores
     var playerXScore = 0
     var playerOScore = 0
     
@@ -93,7 +93,7 @@ class GameViewController: UIViewController {
                 return
             }
         } else if filledCanvas[canvasIndex] != 0 {
-            let alert = UIAlertController(title: "Alert!", message: "This box is already used. Click on another box.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Alert!", message: "This box is already used.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
