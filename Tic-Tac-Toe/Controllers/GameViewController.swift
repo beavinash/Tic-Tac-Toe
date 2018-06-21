@@ -89,8 +89,13 @@ class GameViewController: UIViewController {
                 let alert = UIAlertController(title: "Winner", message: "It's a drawn game", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                playerTurnLabel.isHidden = true
                 return
             }
+        } else if filledCanvas[canvasIndex] != 0 {
+            let alert = UIAlertController(title: "Alert!", message: "This box is already used. Click on another box.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -98,13 +103,19 @@ class GameViewController: UIViewController {
         gameStart = false
         
         if playerTurn == -1  {
-            let alert = UIAlertController(title: "Winner", message: "Player 1 Won", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Winner", message: "Player 1", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            playerXScore += 1
+            playerXScoreLabel.text = "Player 1 (X) : \(playerXScore)"
+            playerTurnLabel.isHidden = true
         } else {
-            let alert = UIAlertController(title: "Winner", message: "Player 2 Won", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Winner", message: "Player 2", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            playerOScore += 1
+            playerOScoreLabel.text = "Player 2 (O) : \(playerOScore)"
+            playerTurnLabel.isHidden = true
         }
     }
     
@@ -114,6 +125,7 @@ class GameViewController: UIViewController {
         gameStart = true
         filledCanvas = Array(repeating: 0, count: 9)
         numberOfTurns = 1
+        playerTurnLabel.isHidden = false
         
         for index in 1...9 {
             if let button = view.viewWithTag(index) as? UIButton {
