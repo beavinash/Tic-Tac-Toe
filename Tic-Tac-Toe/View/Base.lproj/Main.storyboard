@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1's Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmJ-Pd-9vf">
-                                <rect key="frame" x="113" y="580.5" width="149" height="26.5"/>
+                                <rect key="frame" x="113" y="505" width="149" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -160,7 +160,6 @@
                             <constraint firstItem="oDZ-1c-wnM" firstAttribute="top" secondItem="FXm-Ss-hct" secondAttribute="top" constant="30" id="5kw-Hq-0kZ">
                                 <variation key="heightClass=regular" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="FXm-Ss-hct" firstAttribute="bottom" secondItem="mmJ-Pd-9vf" secondAttribute="bottom" constant="60" id="DkM-1I-9YH"/>
                             <constraint firstItem="oDZ-1c-wnM" firstAttribute="centerX" secondItem="k9Y-ox-5b0" secondAttribute="centerX" id="KK6-4e-XMe"/>
                             <constraint firstItem="mmJ-Pd-9vf" firstAttribute="top" secondItem="kty-fi-64x" secondAttribute="bottom" constant="20" id="Nfl-5P-Ehl"/>
                             <constraint firstItem="MWp-74-ZuN" firstAttribute="leading" secondItem="FXm-Ss-hct" secondAttribute="leading" id="P6K-Wa-lgJ"/>
@@ -169,6 +168,7 @@
                             <constraint firstItem="mmJ-Pd-9vf" firstAttribute="top" secondItem="kty-fi-64x" secondAttribute="bottom" constant="10" id="Wc7-Fy-mVq"/>
                             <constraint firstItem="kty-fi-64x" firstAttribute="centerY" secondItem="k9Y-ox-5b0" secondAttribute="centerY" id="ZNZ-FO-x6X"/>
                             <constraint firstItem="kty-fi-64x" firstAttribute="centerX" secondItem="k9Y-ox-5b0" secondAttribute="centerX" id="dAC-r4-H6J"/>
+                            <constraint firstItem="mmJ-Pd-9vf" firstAttribute="top" secondItem="kty-fi-64x" secondAttribute="bottom" constant="20" id="dlV-vG-jiw"/>
                             <constraint firstItem="mmJ-Pd-9vf" firstAttribute="centerX" secondItem="k9Y-ox-5b0" secondAttribute="centerX" id="duH-26-6qv"/>
                             <constraint firstItem="mmJ-Pd-9vf" firstAttribute="top" secondItem="kty-fi-64x" secondAttribute="bottom" id="rmH-Dt-iAW"/>
                             <constraint firstItem="MWp-74-ZuN" firstAttribute="trailing" secondItem="FXm-Ss-hct" secondAttribute="trailing" id="sf2-Z8-185"/>
@@ -177,14 +177,12 @@
                         <viewLayoutGuide key="safeArea" id="FXm-Ss-hct"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="DkM-1I-9YH"/>
                                 <exclude reference="Wc7-Fy-mVq"/>
                                 <exclude reference="rmH-Dt-iAW"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="constraints">
-                                <include reference="DkM-1I-9YH"/>
                                 <exclude reference="ZNZ-FO-x6X"/>
                                 <exclude reference="dAC-r4-H6J"/>
                                 <exclude reference="Nfl-5P-Ehl"/>

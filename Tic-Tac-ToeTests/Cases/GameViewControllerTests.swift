@@ -17,6 +17,7 @@ class GameViewControllerTests: XCTestCase {
         super.setUp()
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        gameVC = GameViewController()
     }
     
     override func tearDown() {
@@ -25,7 +26,11 @@ class GameViewControllerTests: XCTestCase {
     }
     
     func testPlayerTurnValue() {
-        
+        XCTAssertEqual(gameVC.playerTurn, 1)
+    }
+    
+    func testWinningCombinations() {
+        XCTAssertEqual(gameVC.winningCombinations[0], [0, 1, 2])
     }
     
 
