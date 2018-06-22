@@ -107,31 +107,35 @@ class GameViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             playerXScore += 1
-            playerXScoreLabel.text = "Player 1 (X) : \(playerXScore)"
+            playerXScoreLabel?.text = "Player 1 (X) : \(playerXScore)"
             playerTurnLabel.isHidden = true
         } else {
             let alert = UIAlertController(title: "Winner", message: "Player 2", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             playerOScore += 1
-            playerOScoreLabel.text = "Player 2 (O) : \(playerOScore)"
-            playerTurnLabel.isHidden = true
+            playerOScoreLabel?.text = "Player 2 (O) : \(playerOScore)"
+            playerTurnLabel?.isHidden = true
         }
     }
     
     @IBAction func restartGamePressed(_ sender: Any) {
         playerTurn = 1
-        playerTurnLabel.text = "Player \(playerTurn)'s turn"
+        playerTurnLabel?.text = "Player \(playerTurn)'s turn"
         gameStart = true
         filledCanvas = Array(repeating: 0, count: 9)
         numberOfTurns = 1
-        playerTurnLabel.isHidden = false
+        playerTurnLabel?.isHidden = false
         
         for index in 1...9 {
             if let button = view.viewWithTag(index) as? UIButton {
                 button.setImage(nil, for: UIControlState.normal)
             }
         }
+    }
+    
+    func displayAlert(title: String, message: String) {
+        
     }
     
     
