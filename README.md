@@ -2,7 +2,12 @@ Tic-Tac-Toe
 
 This Tic-Tac-Toe game is developed using Xcode Version 9.4.1 (9F2000). So, the project might not open with earlier Versions of Xcode.
 
-This game is developed for all the iPhone devices from iPhone 4s. Also, this game is developed for iPad.
+This game is developed for all the iPhone devices from iPhone 4s. Also, this game is developed for all iPad's.
+
+• Added Unit Tests
+• Added Animations
+• Efficient Code
+• Well Documented
 
 Rules for the game:
 
