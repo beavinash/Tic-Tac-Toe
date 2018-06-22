@@ -26,7 +26,7 @@ class GameViewController: UIViewController {
     var playerXScore = 0
     var playerOScore = 0
     
-    // Game state
+    // For game state to determine if the game ended or not
     var gameStart: Bool = true
     
     // Player Turns count
@@ -48,10 +48,12 @@ class GameViewController: UIViewController {
         
         let canvasIndex = sender.tag - 1
         
+        // Condition to check if the box is filled and game start is true
         if filledCanvas[canvasIndex] == 0 && gameStart {
             
             filledCanvas[canvasIndex] = playerTurn
             
+            // To dispaly Player 1 or Player 2 button image
             if playerTurn == 1 {
                 sender.setImage(UIImage(named: "X"), for: [])
             } else {
@@ -67,6 +69,7 @@ class GameViewController: UIViewController {
             let column = canvasIndex % 3
             
             var sum1 = 0, sum2 = 0
+            // Looping through constant times to fill canvas with values
             for i in 0...2 {
                 sum1 += filledCanvas[i * 3 + column]
                 sum2 += filledCanvas[row * 3 + i]
@@ -85,40 +88,35 @@ class GameViewController: UIViewController {
                 }
             }
             
+            // Condition to check if number of turns greater than 9 and game start value
             if (numberOfTurns > 9 && gameStart) {
-                let alert = UIAlertController(title: "Winner", message: "It's a drawn game", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                displayAlert(title: "Winner is: ", message: "The game is drawn!")
                 playerTurnLabel.isHidden = true
                 return
             }
-        } else if filledCanvas[canvasIndex] != 0 {
-            let alert = UIAlertController(title: "Alert!", message: "This box is already used.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        } else if filledCanvas[canvasIndex] != 0 { // To display alert if the box is already used
+            displayAlert(title: "Alert!", message: "This box is already used.")
         }
     }
     
+    // Function to display the winner
     func showResult() {
         gameStart = false
-        
+        // Condition to check the winner and display alert
         if playerTurn == -1  {
-            let alert = UIAlertController(title: "Winner", message: "Player 1", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            displayAlert(title: "Winner is: ", message: "Player 1 (X)")
             playerXScore += 1
             playerXScoreLabel?.text = "Player 1 (X) : \(playerXScore)"
             playerTurnLabel.isHidden = true
         } else {
-            let alert = UIAlertController(title: "Winner", message: "Player 2", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            displayAlert(title: "Winner is: ", message: "Player 2 (O)")
             playerOScore += 1
             playerOScoreLabel?.text = "Player 2 (O) : \(playerOScore)"
             playerTurnLabel?.isHidden = true
         }
     }
     
+    // To restart the game to initial instance
     @IBAction func restartGamePressed(_ sender: Any) {
         playerTurn = 1
         playerTurnLabel?.text = "Player \(playerTurn)'s turn"
@@ -134,8 +132,11 @@ class GameViewController: UIViewController {
         }
     }
     
+    // To display alert
     func displayAlert(title: String, message: String) {
-        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     
