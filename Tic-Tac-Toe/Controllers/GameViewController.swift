@@ -10,9 +10,13 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    // UILabel to display data related to score and current turn of the player
     @IBOutlet weak var playerXScoreLabel: UILabel!
     @IBOutlet weak var playerOScoreLabel: UILabel!
     @IBOutlet weak var playerTurnLabel: UILabel!
+    
+    // This IBOutlet variable used for animation of UIButton
+    @IBOutlet weak var animateButton: UIButton!
     
     // This variable will keep track of a player turn in a game
     var playerTurn: Int = 1
@@ -63,6 +67,7 @@ class GameViewController: UIViewController {
             playerTurn *= -1
             numberOfTurns += 1
             playerTurnLabel.text = "Player \((playerTurn + 3) % 3 )'s turn"
+            playerTurnLabel?.flashPlayerTurnLabel()
             
             
             let row = canvasIndex / 3
@@ -92,6 +97,7 @@ class GameViewController: UIViewController {
             if (numberOfTurns > 9 && gameStart) {
                 displayAlert(title: "Winner is: ", message: "The game is drawn!")
                 playerTurnLabel.isHidden = true
+                animateButton?.pulsateRestartGameButton()
                 return
             }
         } else if filledCanvas[canvasIndex] != 0 { // To display alert if the box is already used
@@ -108,11 +114,13 @@ class GameViewController: UIViewController {
             playerXScore += 1
             playerXScoreLabel?.text = "Player 1 (X) : \(playerXScore)"
             playerTurnLabel.isHidden = true
+            animateButton?.pulsateRestartGameButton()
         } else {
             displayAlert(title: "Winner is: ", message: "Player 2 (O)")
             playerOScore += 1
             playerOScoreLabel?.text = "Player 2 (O) : \(playerOScore)"
             playerTurnLabel?.isHidden = true
+            animateButton?.pulsateRestartGameButton()
         }
     }
     
@@ -120,6 +128,7 @@ class GameViewController: UIViewController {
     @IBAction func restartGamePressed(_ sender: Any) {
         playerTurn = 1
         playerTurnLabel?.text = "Player \(playerTurn)'s turn"
+        playerTurnLabel?.flashPlayerTurnLabel()
         gameStart = true
         filledCanvas = Array(repeating: 0, count: 9)
         numberOfTurns = 1

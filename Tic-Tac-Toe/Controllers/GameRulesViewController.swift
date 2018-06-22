@@ -10,11 +10,16 @@ import UIKit
 
 class GameRulesViewController: UIViewController {
     
+    // This IBOutlet variable used for animation of UIStackView
+    @IBOutlet weak var animateRulesStackView: UIStackView!
+    
     // MARK: - Initial
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // Animate Rules View
+        animateRulesStackView.pulsateRulesView()
     }
     
     // MARK: - Memory managment

@@ -203,6 +203,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="animateButton" destination="MWp-74-ZuN" id="elT-5P-I9f"/>
                         <outlet property="playerOScoreLabel" destination="bCV-fo-8qV" id="C42-Wn-ahN"/>
                         <outlet property="playerTurnLabel" destination="mmJ-Pd-9vf" id="EA4-Bi-cDn"/>
                         <outlet property="playerXScoreLabel" destination="l19-Fg-1v5" id="5mN-y2-6Wu"/>
@@ -258,6 +259,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9nO-EX-bOZ"/>
                     </view>
+                    <connections>
+                        <outlet property="animateRulesStackView" destination="07w-ky-DjL" id="2VJ-XQ-uLK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVX-CP-G6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
